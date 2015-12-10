@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "A lean planvas template in Markdown!  Convert to HTML! Collaborate with Git!",
   "main": "plan2html.js",
-  "dependencies": {},
+  "dependencies": {
+    "marked": "^0.3.5"
+  },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
