@@ -1,0 +1,28 @@
+{
+  "name": "planvas",
+  "version": "1.0.0",
+  "description": "A lean planvas template in Markdown!  Convert to HTML! Collaborate with Git!",
+  "main": "plan2html.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shermanhuman/planvas.git"
+  },
+  "keywords": [
+    "Lean",
+    "Canvas",
+    "business",
+    "plans",
+    "startup"
+  ],
+  "author": "Sherman Boyd",
+  "license": "CC-BY-4.0",
+  "bugs": {
+    "url": "https://github.com/shermanhuman/planvas/issues"
+  },
+  "homepage": "https://github.com/shermanhuman/planvas#readme"
+}
