@@ -4,7 +4,6 @@
   "description": "A lean planvas template in Markdown!  Convert to HTML! Collaborate with Git!",
   "main": "plan2html.js",
   "dependencies": {
-    "bootstrap": "^3.3.6",
     "handlebars": "^4.0.5",
     "marked": "^0.3.5"
   },
