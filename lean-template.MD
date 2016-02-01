@@ -10,7 +10,7 @@ What problem exists in the market or in our current product/offering?
 
 ## Existing Alternatives
 
-What existing alternatives do customers use to solve this problem today? Lean thinking: Perhaps the alternative solutions or work arounds are good enough that an expensive solution isn’t justified.
+What existing alternatives do customers use to solve this problem today? Lean thinking: Perhaps the alternative solutions or work arounds are good enough that an expensive solution isn't justified.
 
 ## Solution
 
@@ -33,7 +33,7 @@ What existing alternatives do customers use to solve this problem today? Lean th
 
 ## Unfair Advantage
 
-Can’t be easily copied or bought.
+Can't be easily copied or bought.
 
 ## Channels
 
