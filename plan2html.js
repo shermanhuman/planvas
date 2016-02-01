@@ -7,32 +7,31 @@
 var marked = require('marked');
 var fs = require('fs');
 
-if (process.argv.length <= 2){
-  console.log("No arguments supplied.  Give me some MD files to munch.")
-};
+marked.setOptions({
+  gfm: true
+});
 
-process.argv.forEach(function (val, index, array) {
+if (process.argv.length <= 2){
+  console.log(`  No arguments supplied.  Give me some MD files to munch.  
+  Maybe try using the filenames of what you want converted as arguments.  
+  As many as you want, seperated by spaces.`)
+}else{
+
+for(i=2; i < process.argv.length; i++){
+  val =process.argv[i];
   console.log('Converting ' + val + ' to HTML.');
   var htmlfilename = val + '.html';
   var infile = fs.readFile(val, 'utf8', function(err,data){
     if(err) throw err;
-    return data;
-  });
-
-var convertedfile = marked(infile);
-
-fs.writeFile(htmlfilename, convertedfile, function(err){
-  if(err) {
-    throw err;
-  }
-  else{
-    console.log('Saved as ' +  htmlfilename);
-  }
-  
-})  
-  
-  
-  
-  
-});
-
+    var converted = marked(data);
+    fs.writeFile(htmlfilename, converted, function(err){
+      if(err) {
+        throw err;
+      }
+      else{
+        console.log('Saved as ' +  htmlfilename);
+      }
+    })
+  })
+}
+};
