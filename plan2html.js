@@ -6,6 +6,7 @@
 
 var marked = require('marked');
 var fs = require('fs');
+var Handlebars = require('handlebars');
 
 marked.setOptions({
   gfm: true
@@ -23,7 +24,10 @@ for(i=2; i < process.argv.length; i++){
   var htmlfilename = val + '.html';
   var infile = fs.readFile(val, 'utf8', function(err,data){
     if(err) throw err;
-    var converted = marked(data);
+
+    var parsed = parse(data);
+    var planvas = htmlify(parsed);
+    var converted = Handlebars.compile('presentation.html', planvas);
     fs.writeFile(htmlfilename, converted, function(err){
       if(err) {
         throw err;
@@ -35,3 +39,32 @@ for(i=2; i < process.argv.length; i++){
   })
 }
 };
+
+var parse = function(data){
+    textarray = data.split('##');
+ 
+    var planvas = {
+    problem: '##' + textarray[1],
+    existingalternatives: '##' + textarray[2],
+    solution: '##' + textarray[3],
+    keymetrics: '##' + textarray[4],
+    uniquevalueproposition: '##' + textarray[5],
+    highlevelconcept: '##' + textarray[6],
+    unfairadvantage: '##' + textarray[7],
+    channels: '##' + textarray[8],
+    customersegments: '##' + textarray[9],
+    earlyadopters: '##' + textarray[10],
+    coststructure: '##' + textarray[11],
+    revenuestreams: '##' + textarray[12]
+};
+  //console.log(planvas);
+    return planvas;
+}
+
+var htmlify = function(object){
+    for (var prop in object){
+        object[prop] = marked(object[prop]);
+    }
+    //console.log(object);
+    return object;
+}

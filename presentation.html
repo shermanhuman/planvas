@@ -22,40 +22,105 @@
     padding: 20px;
     }
 
-    div.row {
-    border: 1px solid;
-    }
-    
-    div.col-md-2 {
-    border-left: 1px solid;
-    border-right: 1px solid;
-    }
-  
-    .row + .row {
-    border-top:0;
-    }
-    
-    div.col-md-2 + div.col-md-2 {
-        border-left: 0;
-    }
-
+           .border-int {
+          border: 1px solid gray;
+        }
+        
+        .border-ext-top {
+          border-top: 2px solid gray;
+        }
+        
+        .border-ext-right {
+          border-right: 2px solid gray;
+        }
+        
+        .border-ext-bottom {
+          border-bottom: 2px solid gray;
+        }
+        
+        .border-ext-left {
+          border-left: 2px solid gray;
+        }
+        
+        .row {
+          display: flex;
+        }
+        
     </style>
+    
+    <script id="header" type="text/x-handlebars-template">​
+ <div> Name: {{ headerTitle }} </div>​
+​</script>
+
   </head>
   <body>
 
-<div class="container-fluid">
-<div class="row">
-    <div class="col-md-2 col-md-offset-1">one</div>
-    <div class="col-md-2">2</div>
-    <div class="col-md-2">3</div>
-    <div class="col-md-2">4</div>
-    <div class="col-md-2">5</div>
-</div>
-<div class="row">
-    <p>This is some text.</p>
-    <button type="button" class="btn btn-lg btn-danger">Danger</button>
-</div>
-   
+<div class="container">
+  <h1>Lean Canvas Hack</h1>
+
+  <div class="row">
+    <div class="col-md-12">
+
+      <div class="row">
+        <div class="col-md-1">
+          <!-- I'm just here to center things, don't mind me -->
+        </div>
+        <div class="col-md-2 border-int border-ext-top border-ext-left">
+          <p>{{planvas.problem}}</p>
+          <p>{{planvas.existingalternatives}}</p>
+        </div>
+        <div class="col-md-2">
+
+          <div class="row">
+            <div class="col-md-12 border-int border-ext-top">
+            <p>{{planvas.solution}}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 border-int">
+            <p>{{planvas.keymetrics}}</p>  
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-2 border-int border-ext-top">
+          <p>{{planvas.uniquevalueproposition}}</p>
+          <p>{{planvas.highlevelconcept}}</p>
+        </div>
+        <div class="col-md-2">
+
+          <div class="row">
+            <div class="col-md-12 border-int border-ext-top">
+              <p>{{planvas.unfairadvantage}}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 border-int">
+              <p>{{planvas.channels}}</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-2 border-int border-ext-top border-ext-right">
+          <p>{{planvas.customersegments}}</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-1">
+          <!-- I'm just here to center things, don't mind me -->
+        </div>
+        <div class="col-md-5 border-int border-ext-bottom border-ext-left">
+          <p>{{planvas.coststructure}}</p>
+        </div>
+        <div class="col-md-5 border-int border-ext-bottom border-ext-right">
+         <p>{{planvas.revenuestreams}}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
