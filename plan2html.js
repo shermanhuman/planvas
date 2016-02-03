@@ -22,12 +22,15 @@ for(i=2; i < process.argv.length; i++){
   val =process.argv[i];
   console.log('Converting ' + val + ' to HTML.');
   var htmlfilename = val + '.html';
+  var lean-template = fs.readFile('presentation.html', 'utf8', function(err,data){
+      if(err) throw err
+  });
   var infile = fs.readFile(val, 'utf8', function(err,data){
     if(err) throw err;
 
     var parsed = parse(data);
     var planvas = htmlify(parsed);
-    var converted = Handlebars.compile('presentation.html', planvas);
+    var converted = Handlebars.compile(lean-template, planvas);
     fs.writeFile(htmlfilename, converted, function(err){
       if(err) {
         throw err;
