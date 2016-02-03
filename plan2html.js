@@ -12,6 +12,9 @@ marked.setOptions({
   gfm: true
 });
 
+var leantemplatein = fs.readFileSync('presentation.html', 'utf8');
+var leantemplate = leantemplatein.toString();
+
 if (process.argv.length <= 2){
   console.log(`  No arguments supplied.  Give me some MD files to munch.  
   Maybe try using the filenames of what you want converted as arguments.  
@@ -22,15 +25,13 @@ for(i=2; i < process.argv.length; i++){
   val =process.argv[i];
   console.log('Converting ' + val + ' to HTML.');
   var htmlfilename = val + '.html';
-  var lean-template = fs.readFile('presentation.html', 'utf8', function(err,data){
-      if(err) throw err
-  });
   var infile = fs.readFile(val, 'utf8', function(err,data){
     if(err) throw err;
 
     var parsed = parse(data);
     var planvas = htmlify(parsed);
-    var converted = Handlebars.compile(lean-template, planvas);
+    var template = Handlebars.compile(leantemplate);
+    var converted = leantemplate(planvas);
     fs.writeFile(htmlfilename, converted, function(err){
       if(err) {
         throw err;
