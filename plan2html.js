@@ -13,7 +13,6 @@ marked.setOptions({
 });
 
 var leantemplatein = fs.readFileSync('presentation.html', 'utf8');
-var leantemplate = leantemplatein.toString();
 
 if (process.argv.length <= 2){
   console.log(`  No arguments supplied.  Give me some MD files to munch.  
