@@ -33,7 +33,7 @@ if (process.argv.length <= 2) {
             var template = Handlebars.compile(leantemplate);
             //console.log('planvas = ' + planvas);
             var converted = template(planvas);
-            console.log('converted = ' + converted);
+            //console.log('converted = ' + converted);
             fs.writeFile(htmlfilename, converted, function (err) {
                 if (err) {
                     throw err;
