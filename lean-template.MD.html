@@ -1,6 +1,243 @@
-function ret(context, execOptions) {
-    if (!compiled) {
-      compiled = compileInput();
-    }
-    return compiled.call(this, context, execOptions);
-  }
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Lean Planvas</title>
+
+    <style type="text/css">
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #FAFAFA;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: .8em;
+        }
+        
+        h2 {
+            font-family: inherit;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+        
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        
+        .page {
+            width: 297mm;
+            min-height: 210mm;
+            padding: 20mm;
+            margin: 10mm auto;
+            border: 1px #D3D3D3 solid;
+            border-radius: 5px;
+            background: white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        @page {
+            size: landscape;
+            margin: 0;
+        }
+        
+        @media print {
+            html,
+            body {
+                width: 297mm;
+                height: 210mm;
+                writing-mode: tb-rl;
+            }
+            .page {
+                margin: 0;
+                border: initial;
+                border-radius: initial;
+                width: initial;
+                min-height: initial;
+                box-shadow: initial;
+                background: initial;
+                page-break-after: always;
+            }
+        }
+        
+        .col-100,
+        .col-50,
+        .col-20,
+        .nested {
+            float: left;
+            position: relative;
+            min-height: 1px;
+            display: block;
+            line-height: 1.42857143;
+            color: #333;
+            background-color: #fff;
+        }
+        
+        .col-100 {
+            width: 100%;
+        }
+        
+        .col-20 {
+            width: 20%;
+            height: 125mm;
+        }
+        
+        .col-50 {
+            width: 50%;
+            height: 45mm;
+            border-top: 1px solid gray;
+            border-bottom: 1px solid gray;
+        }
+        
+        .nested-top,
+        .nested,
+        .nested-lower {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+        
+        .nested-top {}
+        
+        .nested {
+            height: 100%;
+        }
+        
+        .nested-lower {
+            height: 45mm;
+        }
+        
+        .bordered {
+            border: 1px solid gray;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="page">
+
+        <div class="col-100 bordered">
+
+            <div class="col-20 bordered">
+                <div class="nested-top">
+                    <p class="panel"><h2 id="problem">Problem</h2>
+<ul>
+<li>top 3 problems</li>
+<li>top 3 problems</li>
+<li>top 3 problems</li>
+</ul>
+<p>What problem exists in the market or in our current product/offering?</p>
+</p>
+                </div>
+                <div class="nested">
+                    <p class="panel"><h2 id="existing-alternatives">Existing Alternatives</h2>
+<p>What existing alternatives do customers use to solve this problem today? Are they good enough that an expensive solution isn&#39;t justified.</p>
+</p>
+                </div>
+            </div>
+
+            <div class="col-20">
+                <div class="nested-top  bordered">
+                    <p><h2 id="solution">Solution</h2>
+<ul>
+<li>top 3 features</li>
+<li>top 3 features</li>
+<li>top 3 features</li>
+</ul>
+</p>
+                </div>
+                <div class="nested bordered">
+                    <p><h2 id="key-metrics">Key Metrics</h2>
+<p>Key activities you measure.
+<em>eg <a href="http://www.slideshare.net/dmc500hats/startup-metrics-for-pirates-long-version">AARRR</a></em></p>
+</p>
+                </div>
+
+            </div>
+            <div class="col-20  bordered">
+                <div class="nested-top">
+                    <p><h2 id="unique-value-proposition">Unique Value Proposition</h2>
+<p>Simple, clear, compelling messages that states why you are different and worth buying.</p>
+</p>
+                </div>
+                <div class="nested">
+                    <p><h2 id="high-level-concept">High-Level Concept</h2>
+<p>What it is? </p>
+</p>
+                </div>
+            </div>
+            <div class="col-20">
+
+                <div class="nested-top  bordered">
+                    <p><h2 id="unfair-advantage">Unfair Advantage</h2>
+<p>Can&#39;t be easily copied or bought.</p>
+</p>
+                </div>
+                <div class="nested bordered">
+                    <p><h2 id="channels">Channels</h2>
+<p>Path to customer.</p>
+</p>
+                </div>
+
+            </div>
+            <div class="col-20   bordered">
+                <div class="nested-top">
+                    <p><h2 id="customer-segments">Customer Segments</h2>
+<ul>
+<li>customer target one</li>
+<li>customer target two</li>
+</ul>
+<p>What types or categories of customers have this problem? Consider using personas to describe them.</p>
+</p>
+                </div>
+                <div class="nested">
+                    <p><h2 id="early-adopters">Early Adopters</h2>
+<p>Early adopter profile.  Are there any customers who would likely be early adopters of our solution?  Validate and iterate.</p>
+</p>
+                </div>
+            </div>
+
+
+            <div class="col-50">
+                <div class="nested-lower bordered">
+                    <p><h2 id="cost-structure">Cost Structure</h2>
+<ul>
+<li>customer acquisition costs</li>
+<li>distribution</li>
+<li>people</li>
+</ul>
+</p>
+                </div>
+            </div>
+            <div class="col-50">
+                <div class="nested-lower bordered">
+                    <p><h2 id="revenue-streams">Revenue Streams</h2>
+<ul>
+<li>revenue model</li>
+<li>lifetime value</li>
+<li>revenue</li>
+<li>gross margin</li>
+</ul>
+</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

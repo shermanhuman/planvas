@@ -1,129 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8"> 
+
+<head>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <title>Lean Planvas</title>
-    
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    
-     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->   
-    
-    <style type="text/css">
-    body {
-    padding: 20px;
-    }
 
-           .border-int {
-          border: 1px solid gray;
+    <title>Lean Planvas</title>
+
+    <style type="text/css">
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #FAFAFA;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: .8em;
         }
         
-        .border-ext-top {
-          border-top: 2px solid gray;
+        h2 {
+            font-family: inherit;
+            font-weight: bold;
+            font-size: 1.5em;
         }
         
-        .border-ext-right {
-          border-right: 2px solid gray;
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
         }
         
-        .border-ext-bottom {
-          border-bottom: 2px solid gray;
+        .page {
+            width: 297mm;
+            min-height: 210mm;
+            padding: 20mm;
+            margin: 10mm auto;
+            border: 1px #D3D3D3 solid;
+            border-radius: 5px;
+            background: white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
         }
         
-        .border-ext-left {
-          border-left: 2px solid gray;
+        @page {
+            size: landscape;
+            margin: 0;
         }
         
-        .row {
-          display: flex;
+        @media print {
+            html,
+            body {
+                width: 297mm;
+                height: 210mm;
+                writing-mode: tb-rl;
+            }
+            .page {
+                margin: 0;
+                border: initial;
+                border-radius: initial;
+                width: initial;
+                min-height: initial;
+                box-shadow: initial;
+                background: initial;
+                page-break-after: always;
+            }
         }
         
+        .col-100,
+        .col-50,
+        .col-20,
+        .nested {
+            float: left;
+            position: relative;
+            min-height: 1px;
+            display: block;
+            line-height: 1.42857143;
+            color: #333;
+            background-color: #fff;
+        }
+        
+        .col-100 {
+            width: 100%;
+        }
+        
+        .col-20 {
+            width: 20%;
+            height: 125mm;
+        }
+        
+        .col-50 {
+            width: 50%;
+            height: 45mm;
+            border-top: 1px solid gray;
+            border-bottom: 1px solid gray;
+        }
+        
+        .nested-top,
+        .nested,
+        .nested-lower {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+        
+        .nested-top {}
+        
+        .nested {
+            height: 100%;
+        }
+        
+        .nested-lower {
+            height: 45mm;
+        }
+        
+        .bordered {
+            border: 1px solid gray;
+        }
     </style>
 
-  </head>
-  <body>
+</head>
 
-<div class="container">
-  <h1>Lean Canvas Hack</h1>
+<body>
 
-  <div class="row">
-    <div class="col-md-12">
+    <div class="page">
 
-      <div class="row">
-        <div class="col-md-1">
-          <!-- I'm just here to center things, don't mind me -->
-        </div>
-        <div class="col-md-2 border-int border-ext-top border-ext-left">
-          <p>{{planvas.problem}}</p>
-          <p>{{planvas.existingalternatives}}</p>
-        </div>
-        <div class="col-md-2">
+        <div class="col-100 bordered">
 
-          <div class="row">
-            <div class="col-md-12 border-int border-ext-top">
-            <p>{{planvas.solution}}</p>
+            <div class="col-20 bordered">
+                <div class="nested-top">
+                    <p class="panel">{{{problem}}}</p>
+                </div>
+                <div class="nested">
+                    <p class="panel">{{{existingalternatives}}}</p>
+                </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12 border-int">
-            <p>{{planvas.keymetrics}}</p>  
+
+            <div class="col-20">
+                <div class="nested-top  bordered">
+                    <p>{{{solution}}}</p>
+                </div>
+                <div class="nested bordered">
+                    <p>{{{keymetrics}}}</p>
+                </div>
+
             </div>
-          </div>
-
-        </div>
-        <div class="col-md-2 border-int border-ext-top">
-          <p>{{planvas.uniquevalueproposition}}</p>
-          <p>{{planvas.highlevelconcept}}</p>
-        </div>
-        <div class="col-md-2">
-
-          <div class="row">
-            <div class="col-md-12 border-int border-ext-top">
-              <p>{{planvas.unfairadvantage}}</p>
+            <div class="col-20  bordered">
+                <div class="nested-top">
+                    <p>{{{uniquevalueproposition}}}</p>
+                </div>
+                <div class="nested">
+                    <p>{{{highlevelconcept}}}</p>
+                </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12 border-int">
-              <p>{{planvas.channels}}</p>
+            <div class="col-20">
+
+                <div class="nested-top  bordered">
+                    <p>{{{unfairadvantage}}}</p>
+                </div>
+                <div class="nested bordered">
+                    <p>{{{channels}}}</p>
+                </div>
+
             </div>
-          </div>
+            <div class="col-20   bordered">
+                <div class="nested-top">
+                    <p>{{{customersegments}}}</p>
+                </div>
+                <div class="nested">
+                    <p>{{{earlyadopters}}}</p>
+                </div>
+            </div>
 
-        </div>
-        <div class="col-md-2 border-int border-ext-top border-ext-right">
-          <p>{{planvas.customersegments}}</p>
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="col-md-1">
-          <!-- I'm just here to center things, don't mind me -->
+            <div class="col-50">
+                <div class="nested-lower bordered">
+                    <p>{{{coststructure}}}</p>
+                </div>
+            </div>
+            <div class="col-50">
+                <div class="nested-lower bordered">
+                    <p>{{{revenuestreams}}}</p>
+                </div>
+            </div>
         </div>
-        <div class="col-md-5 border-int border-ext-bottom border-ext-left">
-          <p>{{planvas.coststructure}}</p>
-        </div>
-        <div class="col-md-5 border-int border-ext-bottom border-ext-right">
-         <p>{{planvas.revenuestreams}}</p>
-        </div>
-      </div>
 
     </div>
-  </div>
-
-</div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    
+
 </body>
 
 </html>
