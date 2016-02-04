@@ -23,6 +23,12 @@
             font-family: inherit;
             font-weight: bold;
             font-size: 1.5em;
+            margin: 0 0 3mm 0;
+        }
+        
+        ul {
+            margin: inherit;
+            padding: inherit;   
         }
         
         * {
@@ -116,6 +122,23 @@
         .bordered {
             border: 1px solid gray;
         }
+        
+        .flexbox {
+            width: 100%;
+            height: 100%;
+            display: -webkit-flex;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .flex-top {
+            flex-grow: 1;
+        }
+        
+        .flex-top,
+        .flex-bot {
+            padding: 15px 15px 15px 15px;
+        }
     </style>
 
 </head>
@@ -127,63 +150,73 @@
         <div class="col-100 bordered">
 
             <div class="col-20 bordered">
-                <div class="nested-top">
-                    <p class="panel">{{{problem}}}</p>
-                </div>
-                <div class="nested">
-                    <p class="panel">{{{existingalternatives}}}</p>
+                <div class="flexbox">
+                    <div class="flex-top">
+                        <p class="panel">{{{problem}}}</p>
+                    </div>
+                    <div class="flex-bot">
+                        <p class="panel">{{{existingalternatives}}}</p>
+                    </div>
                 </div>
             </div>
 
             <div class="col-20">
-                <div class="nested-top  bordered">
-                    <p>{{{solution}}}</p>
+                <div class="flexbox">
+                    <div class="flex-top  bordered">
+                        <p>{{{solution}}}</p>
+                    </div>
+                    <div class="flex-bot bordered">
+                        <p>{{{keymetrics}}}</p>
+                    </div>
                 </div>
-                <div class="nested bordered">
-                    <p>{{{keymetrics}}}</p>
-                </div>
-
             </div>
+
             <div class="col-20  bordered">
-                <div class="nested-top">
-                    <p>{{{uniquevalueproposition}}}</p>
-                </div>
-                <div class="nested">
-                    <p>{{{highlevelconcept}}}</p>
+                <div class="flexbox">
+                    <div class="flex-top">
+                        <p>{{{uniquevalueproposition}}}</p>
+                    </div>
+                    <div class="flex-bot">
+                        <p>{{{highlevelconcept}}}</p>
+                    </div>
                 </div>
             </div>
+
             <div class="col-20">
-
-                <div class="nested-top  bordered">
-                    <p>{{{unfairadvantage}}}</p>
+                <div class="flexbox">
+                    <div class="flex-top  bordered">
+                        <p>{{{unfairadvantage}}}</p>
+                    </div>
+                    <div class="flex-bot bordered">
+                        <p>{{{channels}}}</p>
+                    </div>
                 </div>
-                <div class="nested bordered">
-                    <p>{{{channels}}}</p>
-                </div>
-
             </div>
+
             <div class="col-20   bordered">
-                <div class="nested-top">
-                    <p>{{{customersegments}}}</p>
-                </div>
-                <div class="nested">
-                    <p>{{{earlyadopters}}}</p>
+                <div class="flexbox">
+                    <div class="flex-top">
+                        <p>{{{customersegments}}}</p>
+                    </div>
+                    <div class="flex-bot">
+                        <p>{{{earlyadopters}}}</p>
+                    </div>
                 </div>
             </div>
-
 
             <div class="col-50">
                 <div class="nested-lower bordered">
                     <p>{{{coststructure}}}</p>
                 </div>
             </div>
+
             <div class="col-50">
                 <div class="nested-lower bordered">
                     <p>{{{revenuestreams}}}</p>
                 </div>
             </div>
-        </div>
 
+        </div>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

@@ -23,6 +23,12 @@
             font-family: inherit;
             font-weight: bold;
             font-size: 1.5em;
+            margin: 0 0 3mm 0;
+        }
+        
+        ul {
+            margin: inherit;
+            padding: inherit;   
         }
         
         * {
@@ -116,6 +122,23 @@
         .bordered {
             border: 1px solid gray;
         }
+        
+        .flexbox {
+            width: 100%;
+            height: 100%;
+            display: -webkit-flex;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .flex-top {
+            flex-grow: 1;
+        }
+        
+        .flex-top,
+        .flex-bot {
+            padding: 15px 15px 15px 15px;
+        }
     </style>
 
 </head>
@@ -127,8 +150,9 @@
         <div class="col-100 bordered">
 
             <div class="col-20 bordered">
-                <div class="nested-top">
-                    <p class="panel"><h2 id="problem">Problem</h2>
+                <div class="flexbox">
+                    <div class="flex-top">
+                        <p class="panel"><h2 id="problem">Problem</h2>
 <ul>
 <li>top 3 problems</li>
 <li>top 3 problems</li>
@@ -136,75 +160,90 @@
 </ul>
 <p>What problem exists in the market or in our current product/offering?</p>
 </p>
-                </div>
-                <div class="nested">
-                    <p class="panel"><h2 id="existing-alternatives">Existing Alternatives</h2>
+                    </div>
+                    <div class="flex-bot">
+                        <p class="panel"><h2 id="existing-alternatives">Existing Alternatives</h2>
 <p>What existing alternatives do customers use to solve this problem today? Are they good enough that an expensive solution isn&#39;t justified.</p>
 </p>
+                    </div>
                 </div>
             </div>
 
             <div class="col-20">
-                <div class="nested-top  bordered">
-                    <p><h2 id="solution">Solution</h2>
+                <div class="flexbox">
+                    <div class="flex-top  bordered">
+                        <p><h2 id="solution">Solution</h2>
 <ul>
 <li>top 3 features</li>
 <li>top 3 features</li>
 <li>top 3 features</li>
 </ul>
 </p>
-                </div>
-                <div class="nested bordered">
-                    <p><h2 id="key-metrics">Key Metrics</h2>
+                    </div>
+                    <div class="flex-bot bordered">
+                        <p><h2 id="key-metrics">Key Metrics</h2>
 <p>Key activities you measure.
 <em>eg <a href="http://www.slideshare.net/dmc500hats/startup-metrics-for-pirates-long-version">AARRR</a></em></p>
 </p>
+                    </div>
                 </div>
-
             </div>
+
             <div class="col-20  bordered">
-                <div class="nested-top">
-                    <p><h2 id="unique-value-proposition">Unique Value Proposition</h2>
+                <div class="flexbox">
+                    <div class="flex-top">
+                        <p><h2 id="unique-value-proposition">Unique Value Proposition</h2>
 <p>Simple, clear, compelling messages that states why you are different and worth buying.</p>
 </p>
-                </div>
-                <div class="nested">
-                    <p><h2 id="high-level-concept">High-Level Concept</h2>
+                    </div>
+                    <div class="flex-bot">
+                        <p><h2 id="high-level-concept">High-Level Concept</h2>
 <p>What it is? </p>
 </p>
+                    </div>
                 </div>
             </div>
-            <div class="col-20">
 
-                <div class="nested-top  bordered">
-                    <p><h2 id="unfair-advantage">Unfair Advantage</h2>
+            <div class="col-20">
+                <div class="flexbox">
+                    <div class="flex-top  bordered">
+                        <p><h2 id="unfair-advantage">Unfair Advantage</h2>
 <p>Can&#39;t be easily copied or bought.</p>
 </p>
-                </div>
-                <div class="nested bordered">
-                    <p><h2 id="channels">Channels</h2>
+                    </div>
+                    <div class="flex-bot bordered">
+                        <p><h2 id="channels">Channels</h2>
 <p>Path to customer.</p>
+<ul>
+<li>adwords</li>
+<li>word of mouth</li>
+<li>blogs</li>
+<li>social media</li>
+<li>press &amp; traditional media</li>
+</ul>
 </p>
+                    </div>
                 </div>
-
             </div>
+
             <div class="col-20   bordered">
-                <div class="nested-top">
-                    <p><h2 id="customer-segments">Customer Segments</h2>
+                <div class="flexbox">
+                    <div class="flex-top">
+                        <p><h2 id="customer-segments">Customer Segments</h2>
 <ul>
 <li>customer target one</li>
 <li>customer target two</li>
 </ul>
 <p>What types or categories of customers have this problem? Consider using personas to describe them.</p>
 </p>
-                </div>
-                <div class="nested">
-                    <p><h2 id="early-adopters">Early Adopters</h2>
+                    </div>
+                    <div class="flex-bot">
+                        <p><h2 id="early-adopters">Early Adopters</h2>
 <p>Early adopter profile.  Are there any customers who would likely be early adopters of our solution?  Validate and iterate.</p>
 </p>
+                    </div>
                 </div>
             </div>
-
 
             <div class="col-50">
                 <div class="nested-lower bordered">
@@ -217,6 +256,7 @@
 </p>
                 </div>
             </div>
+
             <div class="col-50">
                 <div class="nested-lower bordered">
                     <p><h2 id="revenue-streams">Revenue Streams</h2>
@@ -229,8 +269,8 @@
 </p>
                 </div>
             </div>
-        </div>
 
+        </div>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

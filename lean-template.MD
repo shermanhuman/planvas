@@ -36,6 +36,12 @@ Can't be easily copied or bought.
 
 Path to customer.
 
+- adwords
+- word of mouth
+- blogs
+- social media
+- press & traditional media
+
 ## Customer Segments
 
 - customer target one
