@@ -20,6 +20,11 @@ What existing alternatives do customers use to solve this problem today? Are the
 Key activities you measure.
 *eg [AARRR](http://www.slideshare.net/dmc500hats/startup-metrics-for-pirates-long-version)*
 
+- _Acquisition_: users come from channels
+- _Activation_: users enjoy first "happy" user experience
+- _Retention_: users continue to use product
+- _Revenue_: users conduct some monetization behaviour
+
 ## Unique Value Proposition
 
 Simple, clear, compelling messages that states why you are different and worth buying.
@@ -34,15 +39,14 @@ Can't be easily copied or bought.
 
 ## Channels
 
-Path to customer.
+Path to customer.  Think about unique onramps for each user segment.
 
-- adwords
-- word of mouth
-- blogs
-- social media
-- press & traditional media
+- _Communication_: adwords, word of mouth, blogs, email, social media, PR
+- _Distribution_
+- _Sales_
+- _Support_
 
-## Customer Segments
+## User Segments
 
 - customer target one
 - customer target two
@@ -61,7 +65,6 @@ Early adopter profile.  Are there any customers who would likely be early adopte
 
 ## Revenue Streams
 
-- revenue model
-- lifetime value
-- revenue
-- gross margin
+- [Revenue model](https://en.wikipedia.org/wiki/Revenue_model)
+- [Lifetime customer value](https://en.wikipedia.org/wiki/Customer_lifetime_value)
+- Revenue and [gross margin](https://en.wikipedia.org/wiki/Gross_margin)
